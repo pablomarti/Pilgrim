@@ -1,6 +1,28 @@
 <h1>This is a demo of Pilgrim</h1>
+
 <div>
 	<%= form_for :data do |f| %>
+		<h3>Basic</h3>
 		<%= select_location_tag :data %>
+		<hr />
+
+		<h3>Work in other block and change field names</h3>
+		<%= select_location_tag :data, 
+				{ 
+				  block: "second_example", 
+			      country:  {
+			        name:  "cname",
+			        html_class:  "cssclass1"
+			      },
+			      state:  {
+			        name:  "sname",
+			        html_class:  "cssclass1 cssclass2"
+			      },
+			      city:  {
+			        name:  "iname",
+			        html_class:  "cssclass3"
+			      }
+				} 
+		%>		
 	<% end %>
 </div>

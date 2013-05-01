@@ -16,17 +16,28 @@
 
 $(document).ready(function(){
 	$(".locations_container").on("change", ".dropdown_location", function(e){
+		var block = $(this).attr("data-block");
+		var kind = $(this).attr("data-kind");
+		var city_id = block + "_city";
+		var data = { 
+		  	value: $(this).val(),
+		  	kind: kind,
+		  	block: block,
+		  	city_name: $("#" + city_id).attr("data-name"),
+		  	city_html_class: $("#" + city_id).attr("class"),
+		  	form_name: $(this).attr("data-formname")
+		}
+
+		if(kind == "country"){
+			var state_id = block + "_state";
+			data['state_name'] = $("#" + state_id).attr("data-name");
+		  	data['state_html_class'] = $("#" + state_id).attr("class");
+		}
+
 		$.ajax({
 		  type: "POST",
 		  url: "/pilgrim/change_location",
-		  data: { 
-		  	value: $(this).val(),
-		  	kind: $(this).attr("data-kind"),
-		  	block: $(this).attr("data-block"),
-		  	name: $(this).attr("data-name"),
-		  	html_class: $(this).attr("data-name"),
-		  	form_name: $(this).attr("data-formname")
-		  }
+		  data: data
 		});
 	});
 });

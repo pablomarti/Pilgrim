@@ -1,5 +1,6 @@
 <% if @kind == "country" %>
-	$('#container_<%= @block %>_state').html('<%=j select_for_element_aux(@form_name, @name, @states, 0, @kind, @block, @html_class, @block + "_state") %>');
+	$('#container_<%= @block %>_state').html('<%=j select_for_element_aux(@form_name, @state_name, @states, 0, "state", @block, @state_html_class, @block + "_state") %>');
+	$('#container_<%= @block %>_city').html('<%=j select_for_element_aux(@form_name, @city_name, @cities, 0, "city", @block, @city_html_class, @block + "_city") %>');
 <% elsif @kind == "state" %>
-	$('#<%= @element_id %>').html('');
+	$('#container_<%= @block %>_city').html('<%=j select_for_element_aux(@form_name, @city_name, @cities, 0, "city", @block, @city_html_class, @block + "_city") %>');
 <% end %>

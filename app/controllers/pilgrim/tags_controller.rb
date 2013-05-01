@@ -6,15 +6,18 @@ module Pilgrim
 	  def change_location
 	    @block = params[:block]
 	    @kind = params[:kind]
-	    @name = params[:name]
-	    @html_class = params[:html_class]
 	    @form_name = params[:form_name]
+        @city_name = params[:city_name]
+        @city_html_class = params[:city_html_class]
 	    value = params[:value]
 
 	    @states = nil
 	    @cities = nil
 
 	    if @kind == "country"
+	      @state_name = params[:state_name]
+	      @state_html_class = params[:state_html_class]
+	      
 	      country = Pilgrim::Country.find(value)
 	      @states = country.states
 	      @cities = @states.first.cities rescue []
