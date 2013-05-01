@@ -36,22 +36,22 @@ Choose countries, states and cities via Ajax
     
     ...
     params = {
-    	block: 		"main",
-    	country:	{
-    					name: 		"country_field_name",
-    					html_class:	"some_class"
-    				}
-    	},
-    	state:		{
-    					name: 		"state_field_name",
-    					html_class:	"some_class"
-    				}
-    	},
-    	city:		{
-    					name: 		"city_field_name",
-    					html_class:	"some_class"
-    				}
-    	},
+      block:  "main",
+      country:	{
+    			  name:        "country_field_name",
+    			  html_class:  "some_class"
+    			}
+      },
+      state:    {
+    			  name: 	   "state_field_name",
+    			  html_class:  "some_class"
+    			}
+      },
+      city:		{
+    			  name: 	   "city_field_name",
+    			  html_class:  "some_class"
+    			}
+      },
     }
     ...
 
