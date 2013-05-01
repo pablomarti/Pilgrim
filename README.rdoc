@@ -10,7 +10,7 @@ Choose countries, states and cities via Ajax
 2. Run <tt>bundle</tt>
 3. Execute: <tt>rails generate pilgrim:install</tt>
 4. Run migrations: <tt>rake db:migrate</tt>
-5. Run seeds: <tt>rake db:seed</tt>
+5. At this time there is no seeds file, but some SQL files. You will have to import the SQL files that are generated in step7.
 6. Add to your routes.rb: <tt>mount Pilgrim::Engine => "/pilgrim", :as => "pilgrim"</tt>
 7. Generate the views so you can configure them executing: <tt>rails generate pilgrim:generate_views</tt> (this will save the views in your_project/app/views/pilgrim)
 8. Add to your application.js: <tt>//= require pilgrim/application</tt>
