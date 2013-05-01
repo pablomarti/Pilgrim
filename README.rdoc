@@ -14,7 +14,7 @@ Choose countries, states and cities via Ajax
 6. Add to your routes.rb: <tt>mount Pilgrim::Engine => "/pilgrim", :as => "pilgrim"</tt>
 7. Generate the views so you can configure them executing: <tt>rails generate pilgrim:generate_views</tt> (this will save the views in your_project/app/views/pilgrim)
 8. Add to your application.js: <tt>//= require pilgrim/application</tt>
-9. Watch the test/dummy for an example of the links
+9. Watch the test/dummy for an example (watch the welcome controller and its views)
 ---
 
 
