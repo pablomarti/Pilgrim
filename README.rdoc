@@ -36,23 +36,23 @@ Choose countries, states and cities via Ajax
     
     ...
     params = {
-		block: 		"main",
-		country:	{
-						name: 		"country_field_name",
-						html_class:	"some_class"
-					}
-		},
-		state:		{
-						name: 		"state_field_name",
-						html_class:	"some_class"
-					}
-		},
-		city:		{
-						name: 		"city_field_name",
-						html_class:	"some_class"
-					}
-		},
-	}
+    	block: 		"main",
+    	country:	{
+    					name: 		"country_field_name",
+    					html_class:	"some_class"
+    				}
+    	},
+    	state:		{
+    					name: 		"state_field_name",
+    					html_class:	"some_class"
+    				}
+    	},
+    	city:		{
+    					name: 		"city_field_name",
+    					html_class:	"some_class"
+    				}
+    	},
+    }
     ...
 
 Where <tt>block</tt> defines an id, so you can use the helper as many times you want changing the value in this key; the configurations for country, state and city are separated and in each one you can define the field name and the class you want to use for each element.
