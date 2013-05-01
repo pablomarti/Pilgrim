@@ -35,7 +35,7 @@ Choose countries, states and cities via Ajax
 
     
     ...
-	params = {
+    params = {
 		block: 		"main",
 		country:	{
 						name: 		"country_field_name",
