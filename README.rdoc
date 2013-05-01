@@ -33,7 +33,8 @@ Choose countries, states and cities via Ajax
 === Helper Methods
 <tt>select_location_tag(form_name, params = {})</tt> display the dropdowns for the locations. This is an example of a hash for params:
 
-	...
+    
+    ...
 	params = {
 		block: 		"main",
 		country:	{
@@ -52,6 +53,6 @@ Choose countries, states and cities via Ajax
 					}
 		},
 	}
-	...
+    ...
 
 Where <tt>block</tt> defines an id, so you can use the helper as many times you want changing the value in this key; the configurations for country, state and city are separated and in each one you can define the field name and the class you want to use for each element.
