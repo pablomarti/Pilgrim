@@ -18,7 +18,7 @@ $(document).ready(function(){
 	$(".locations_container").on("change", ".dropdown_location", function(e){
 		$.ajax({
 		  type: "POST",
-		  url: "/tags/change_location",
+		  url: "/pilgrim/change_location",
 		  data: { 
 		  	value: $(this).val(),
 		  	kind: $(this).attr("data-kind"),

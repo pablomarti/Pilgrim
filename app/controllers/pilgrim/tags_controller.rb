@@ -17,7 +17,7 @@ module Pilgrim
 	    if @kind == "country"
 	      country = Pilgrim::Country.find(value)
 	      @states = country.states
-	      @cities = states.first.cities
+	      @cities = @states.first.cities rescue []
 	    elsif @kind == "state"
 	      state = Pilgrim::State.find(value)
 	      @cities = state.cities

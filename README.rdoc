@@ -1,3 +1,55 @@
 = Pilgrim
+----
 
-This project rocks and uses MIT-LICENSE.
+Choose countries, states and cities via Ajax
+
+
+=== Installation
+
+1. Add to your gemfile: <tt>gem 'pilgrim'</tt>
+2. Run <tt>bundle</tt>
+3. Execute: <tt>rails generate pilgrim:install</tt>
+4. Run migrations: <tt>rake db:migrate</tt>
+5. Run seeds: <tt>rake db:seed</tt>
+6. Add to your routes.rb: <tt>mount Pilgrim::Engine => "/pilgrim", :as => "pilgrim"</tt>
+7. Generate the views so you can configure them executing: <tt>rails generate pilgrim:generate_views</tt> (this will save the views in your_project/app/views/pilgrim)
+8. Add to your application.js: <tt>//= require pilgrim/application</tt>
+9. Watch the test/dummy for an example of the links
+---
+
+
+=== Use
+
+1. Add in the action where you will need to load the countries for the view: <tt>get_locations</tt>
+2. Add in your view inside of a form: <tt><%= select_location_tag :data %></tt> where "data" is the name of the form
+---
+
+
+=== Controller Methods
+<tt>get_locations</tt> gets the countries, the states of the first selected country, and the cities of the first state inside of 3 collections: @countries, @states, @cities
+---
+
+
+=== Helper Methods
+<tt>select_location_tag(form_name, params = {})</tt> display the dropdowns for the locations. This is an example of a hash for params:
+<tt>
+	params = {
+		block: 		"main",
+		country:	{
+						name: 		"country_field_name",
+						html_class:	"some_class"
+					}
+		},
+		state:		{
+						name: 		"state_field_name",
+						html_class:	"some_class"
+					}
+		},
+		city:		{
+						name: 		"city_field_name",
+						html_class:	"some_class"
+					}
+		},
+	}
+</tt>
+Where <tt>block</tt> defines an id, so you can use the helper as many times you want changing the value in this key; the configurations for country, state and city are separated and in each one you can define the field name and the class you want to use for each element.

@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Pablo Marti"]
   s.email       = ["pablo.marti89@gmail.com"]
   s.homepage    = "https://github.com/pablomarti/pilgrim"
-  s.summary     = "Views and helpers for management of countries, states and cities"
-  s.description = "Views and helpers for management of countries, states and cities"
+  s.summary     = "Helpers for countries, states and cities"
+  s.description = "Choose countries, states and cities via Ajax"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

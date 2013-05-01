@@ -2,7 +2,7 @@ module Pilgrim
   module ApplicationHelper
 
   	def select_location_tag(form_name, params = {})
-  		block = params[:block] rescue "main"
+  		block = params[:block].nil? ? "main" : params[:block]
   		render :partial => "pilgrim/tags/container", :locals => { form_name: form_name, params: params, block: block }
   	end
 
@@ -11,14 +11,16 @@ module Pilgrim
   		country_html_class = params[:country][:html_class] + " dropdown_location" rescue "dropdown_location"
   		country_html_id = block + "_country"
 
-  		render :partial => "pilgrim/tags/dropdown", :locals => { 	form_name: form_name, 
-  																	name: country_name, 
-  																	selected_position: 1, 
-  																	kind: "country", 
-  																	block: block, 
-  																	html_class: country_html_class, 
-  																	html_id: country_html_id,
-  																	data: @countries
+  		render  :partial => "pilgrim/tags/dropdown", 
+              :locals => { 	
+                              form_name: form_name, 
+  														name: country_name, 
+  														selected_position: 1, 
+  														kind: "country", 
+  														block: block, 
+  														html_class: country_html_class, 
+  														html_id: country_html_id,
+  														data: @countries
   		}
   	end
 
@@ -55,7 +57,7 @@ module Pilgrim
   	end
 
   	def select_for_element_aux(form_name, name, data, selected_position, kind, block, html_class, html_id)
-  		render :partial => "pilgrim/tags/dropdown_aux", :locals => { form_name: form_name, name: name, data: data, selected_position: selected_position, :kind => kind, :block => block, :class => html_class, :id => html_id }
+  		render :partial => "pilgrim/tags/dropdown_aux", :locals => { form_name: form_name, name: name, data: data, selected_position: selected_position, :kind => kind, :block => block, :html_class => html_class, :html_id => html_id }
   	end
 
   end

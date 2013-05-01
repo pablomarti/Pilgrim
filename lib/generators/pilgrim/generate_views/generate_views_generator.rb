@@ -5,7 +5,7 @@ module Pilgrim
       desc "Generate Views of Pilgrim"
 
       def copy_views
-        directory "pilgrim", "app/views/billify"
+        directory "pilgrim", "app/views/pilgrim"
       end      
     end
   end

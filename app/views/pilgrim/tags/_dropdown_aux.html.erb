@@ -1,1 +1,1 @@
-<% select form_name, name, data, selected_position, {}, :data => {kind: kind, block: block, name: name, html_class: html_class, formname: form_name}, class: html_class, id: html_id %>
+<%= select form_name, name, data.collect{ |i| [i.name, i.id] }, { class: html_class, id: html_id }, :data => { kind: kind, block: block, name: name, html_class: html_class, formname: form_name } %>
