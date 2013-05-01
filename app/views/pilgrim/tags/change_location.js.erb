@@ -1,0 +1,5 @@
+<% if @kind == "country" %>
+	$('#container_<%= @block %>_state').html('<%=j select_for_element_aux(f, @name, @states, 0, @kind, @block, @html_class, @block + "_state") %>');
+<% elsif @kind == "state" %>
+	$('#<%= @element_id %>').html('');
+<% end %>
