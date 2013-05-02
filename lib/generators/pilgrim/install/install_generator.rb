@@ -8,11 +8,11 @@ module Pilgrim
       	rake "pilgrim:install:migrations"
       end
 
-      def copy_files
-        copy_file "countries.sql", "db/countries.sql"
-        copy_file "states.sql", "db/states.sql"
-        copy_file "cities.sql", "db/cities.sql"
-      end      
+      #def copy_files
+        #copy_file "countries.sql", "db/countries.sql"
+        #copy_file "states.sql", "db/states.sql"
+        #copy_file "cities.sql", "db/cities.sql"
+      #end      
     end
   end
 end
