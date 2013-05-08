@@ -9,6 +9,7 @@ module Pilgrim
         extend Pilgrim::Methods::ClassMethods
         include Pilgrim::Methods::InstanceMethods
         helper Pilgrim::ApplicationHelper
+        helper_method "transform_result"
       end
     end
   end

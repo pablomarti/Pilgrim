@@ -19,11 +19,17 @@ module Pilgrim
 	      @state_html_class = params[:state_html_class]
 	      
 	      country = Pilgrim::Country.find(value)
-	      @states = country.states
-	      @cities = @states.first.cities rescue []
+	      
+	      states = country.states rescue []
+	      @states = transform_result(states, 0)
+	      
+	      cities = states.first.cities rescue []
+	      @cities = transform_result(cities, 0)
 	    elsif @kind == "state"
 	      state = Pilgrim::State.find(value)
-	      @cities = state.cities
+	      
+	      cities = state.cities rescue []
+	      @cities = transform_result(cities, 0)
 	    end
 	  end
 
