@@ -1,1 +1,1 @@
-<%= select form_name, name, options_for_select(data.collect{ |c| [c.name, c.id] }, 1), {}, :data => {:kind => kind, :block => block, :formname => form_name, :name => name}, :class => html_class, :id => html_id %>
+<%= select form_name, name, options_for_select(data[:data].collect{ |c| [c.name, c.id] }, data[:selected]), {}, :data => {:kind => kind, :block => block, :formname => form_name, :name => name}, :class => html_class, :id => html_id %>

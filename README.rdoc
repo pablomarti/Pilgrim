@@ -26,7 +26,7 @@ Choose countries, states and cities via Ajax
 
 
 === Controller Methods
-<tt>get_locations</tt> gets the countries, the states of the first selected country, and the cities of the first state inside of 3 collections: @countries, @states, @cities
+<tt>get_locations(country_id = 0, state_id = 0, city_id = 0)</tt> gets the countries, the states of the first selected country, and the cities of the first state inside of 3 collections: @countries, @states, @cities. The parameters are for pre-select the options in the dropdowns.
 ---
 
 
