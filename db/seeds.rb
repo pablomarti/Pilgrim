@@ -17,6 +17,9 @@ INSERT INTO pilgrim_cities VALUES
 ;
 '
 
+ActiveRecord::Base.connection.execute('truncate table pilgrim_countries;')
 ActiveRecord::Base.connection.execute(countries)
+ActiveRecord::Base.connection.execute('truncate table pilgrim_states;')
 ActiveRecord::Base.connection.execute(states)
+ActiveRecord::Base.connection.execute('truncate table pilgrim_cities;')
 ActiveRecord::Base.connection.execute(cities)
