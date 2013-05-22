@@ -20,7 +20,7 @@ module Pilgrim
   														block: block, 
   														html_class: country_html_class, 
   														html_id: country_html_id,
-  														data: @countries
+  														data: params[:data][:countries]
   		}
   	end
 
@@ -36,7 +36,7 @@ module Pilgrim
   																	block: block, 
   																	html_class: state_html_class, 
   																	html_id: state_html_id,
-  																	data: @states
+  																	data: params[:data][:states]
   		}
   	end
 
@@ -52,7 +52,7 @@ module Pilgrim
   																	block: block, 
   																	html_class: city_html_class, 
   																	html_id: city_html_id,
-  																	data: @cities
+  																	data: params[:data][:cities]
   		}
   	end
 
