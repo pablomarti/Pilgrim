@@ -20,13 +20,18 @@ Choose countries, states and cities via Ajax
 
 === Use
 
-1. Add in the action where you will need to load the countries for the view: <tt>get_locations</tt>
+1. Add in the action where you will need to load the countries for the view: <tt>@data = get_locations</tt>
 2. Add in your view inside of a form: <tt><%= select_location_tag :data %></tt> where "data" is the name of the form
 ---
 
 
 === Controller Methods
-<tt>get_locations(country_id = 0, state_id = 0, city_id = 0)</tt> gets the countries, the states of the first selected country, and the cities of the first state inside of 3 collections: @countries, @states, @cities. The parameters are for pre-select the options in the dropdowns.
+<tt>@data = get_locations(country_id = 0, state_id = 0, city_id = 0)</tt> gets the countries, the states of the first selected country, and the cities of the first state inside of 3 collections: @countries, @states, @cities. The parameters are for pre-select the options in the dropdowns.
+
+Also, you can make this:
+<tt>@data2 = get_locations({mode: "exclude", countries: ["Japan", "El Salvador", "Colombia", "Jamaica", "Spain"]})</tt> will get all countries except these ones
+<tt>@data3 = get_locations({mode: "include", countries: ["Japan", "El Salvador", "Colombia", "Jamaica", "Spain"]})</tt> will get only these countries
+
 ---
 
 
@@ -48,7 +53,8 @@ Choose countries, states and cities via Ajax
       city:  {
         name:  "city_field_name",
         html_class:  "some_class"
-      }
+      },
+      data: @data
     }
     ...
 
