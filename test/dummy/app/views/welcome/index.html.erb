@@ -3,13 +3,17 @@
 <div>
 	<%= form_for :data do |f| %>
 		<h3>Basic</h3>
-		<%= select_location_tag :data %>
+		<%= select_location_tag :data, {data: @data1} %>
+		<hr />
+
+		<h3>Basic with excluded countries</h3>
+		<%= select_location_tag :data, {data: @data1, block: "second_example"} %>
 		<hr />
 
 		<h3>Work in other block and change field names</h3>
 		<%= select_location_tag :data, 
 				{ 
-				  block: "second_example", 
+				  block: "third_example", 
 			      country:  {
 			        name:  "cname",
 			        html_class:  "cssclass1"
@@ -21,8 +25,10 @@
 			      city:  {
 			        name:  "iname",
 			        html_class:  "cssclass3"
-			      }
+			      },
+			      data: @data3
 				} 
 		%>		
+		<hr />	
 	<% end %>
 </div>
