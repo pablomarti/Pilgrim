@@ -36,7 +36,7 @@ Also, you can make this:
 
 
 === Helper Methods
-<tt>select_location_tag(form_name, params = {})</tt> display the dropdowns for the locations. This is an example of a hash for params:
+<tt>select_location_tag(form_name, params = {})</tt> display the dropdowns for the locations. This is an example of a hash for params (only the key <tt>data</tt> is required):
 
     
     ...
