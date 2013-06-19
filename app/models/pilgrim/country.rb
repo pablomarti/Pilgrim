@@ -5,11 +5,11 @@ module Pilgrim
 
     def self.get_countries(mode = "all", arr_countries = [])
     	if mode == "include"
-    		where("name IN (?)", arr_countries).order("id ASC")
+    		where("name IN (?)", arr_countries).order("name ASC")
     	elsif mode == "exclude"
-    		where("name NOT IN (?)", arr_countries).order("id ASC")
+    		where("name NOT IN (?)", arr_countries).order("name ASC")
     	else
-    		order("id ASC")
+    		order("name ASC")
     	end 
     end
   end
