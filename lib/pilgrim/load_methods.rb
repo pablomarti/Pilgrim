@@ -12,12 +12,12 @@ module Pilgrim
 
 	  	def get_states(country_id)
 	  		country = Pilgrim::Country.find(country_id)
-	  		country.states
+	  		country.states.order("name ASC")
 	  	end
 
 	  	def get_cities(state_id)
 	  		state = Pilgrim::State.find(state_id)
-	  		state.cities
+	  		state.cities.order("name ASC")
 	  	end
 	  	
 	    #def get_locations(country_id = 0, state_id = 0, city_id = 0)

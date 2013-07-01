@@ -20,15 +20,15 @@ module Pilgrim
 	      
 	      country = Pilgrim::Country.find(value)
 	      
-	      states = country.states rescue []
+	      states = country.states.order("name ASC") rescue []
 	      @states = transform_result(states, 0)
 	      
-	      cities = states.first.cities rescue []
+	      cities = states.first.cities.order("name ASC") rescue []
 	      @cities = transform_result(cities, 0)
 	    elsif @kind == "state"
 	      state = Pilgrim::State.find(value)
 	      
-	      cities = state.cities rescue []
+	      cities = state.cities.order("name ASC") rescue []
 	      @cities = transform_result(cities, 0)
 	    end
 	  end
